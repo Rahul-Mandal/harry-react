@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        "use strict"
+        var a = 3;
+        // d = 99                       // error styling use strict wont allow 
+        //var a= "THIS is string"     // consider latest var
+        // let a = 3;
+        // let a= "THIS is string"   //wont allow duplicate variable
+        // const a ="Hello"
+        // a = 22                   # immutable
+        //number, objects,boolean, string,undefined, null (datatype)
+        console.log(a)
+        let b = 31
+        b = b+33
+        console.log(b)
+        function hello(){
+            console.log("Hello Rahul")
+        }
+        // hello()
+        let obj ={
+            r: 22,           //obj
+            h: 33,            // obj.r, obj.m
+            func: function myfunc(num){
+                console.log("this num is" + num)    //obj.func(22)
+            }
+        }
+        document.addEventListener("click", function click(){
+            console.log("Clicked")
+            //alert("Event")
+            let conf = confirm("Are u sure?")
+            console.log(conf)
+        })
+        
+        let arr = [1,2,3,"hello"]
+        console.log(arr)
+        console.log(this)                       //window obj
+        function check(num){
+            console.log("this num is" + this )   //undefined
+        }
+        check();
+
+        let arrowfunc = (num) =>{
+            console.log("this num is" , this) // with arrow function we can get this value of window obj
+        }
+        arrowfunc();
+
+    //     let mobj = {
+    //         a: this,
+    //         mufuc: (num) =>{
+    //         console.log("this num " , this) // with arrow function we can get this value of window obj
+    //     }
+    // }
+        let mobj = {
+                a: this,
+                mufuc: function (num) {
+                console.log("this num " , this) // with arrow function we can get this value of window obj
+            }
+        }
+        mobj.mufuc();
+        console.log(mobj.a)
+        setTimeout(()=>{                  //callback fun
+            console.log("yes")
+        },3000)
+        console.log("iam here")
+        // arr.forEach(element => {
+        //    console.log(element) 
+        // });
+
+
+
+function formatName(user,a) {
+  console.log(user.firstName + ' ' + user.lastName, a)
+}
+
+const user = {
+  firstName: 'Harper',
+  lastName: 'Perez'
+};
+var a =99
+formatName(user,a)
+// const element = (
+
+//   <div>
+//     Hello, {formatName(user)}!
+//   </div>
+// );
+        </script>
+
+</head>
+<body>
+    <h1>JavaScript!</h1>
+    
+</body>
+</html>
